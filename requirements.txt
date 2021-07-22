@@ -1,4 +1,4 @@
-tensorflow>=2.5.0
+tensorflow-cpu>=2.5.0
 numpy>=1.19.5
 Keras>=2.4.3
 opencv-contrib-python-headless>=4.5.1.48
