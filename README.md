@@ -40,7 +40,8 @@ Here is the dataset link:-  https://www.kaggle.com/jonathanoheix/face-expression
 1. Using CNN with the help of Keras
    Deep learning is a very significant subset of machine learning because of its high performance across various domains. Convolutional Neural Network (CNN), is a powerful image processing deep learning type often using in computer vision that comprises an image and video recognition along with a recommender system and natural language processing ( NLP).
 CNN uses a multilayer system consists of the input layer, output layer, and a hidden layer that comprises multiple convolutional layers, pooling layers, fully connected layers. We will discuss all layers in the next section of the article while explaining the building of CNN.
- ![](Media Files/CNNimage.jpeg)
+ 
+ ![Optional Text](Media Files/CNNimage.jpeg)
 
 • CNN model gave us training gave the accuracy of 80% and test accuracy of 68%. It seems excellent. So, we saved using callbacks and Tested on local machine it was worked fine.
 
