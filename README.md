@@ -51,3 +51,22 @@ CNN uses a multilayer system consists of the input layer, output layer, and a hi
 # 2. Transfer Learning using MobileNet
 We shall be using Mobilenet as it is lightweight in its architecture. It uses depthwise separable convolutions which basically means it performs a single convolution on each colour channel rather than combining all three and flattening it. This has the effect of filtering the input channels. Or as the authors of the paper explain clearly: “ For MobileNets the depthwise convolution applies a single filter to each input channel. The pointwise convolution then applies a 1×1 convolution to combine the outputs the depthwise convolution. A standard convolution both filters and combines inputs into a new set of outputs in one step. The depthwise separable convolution splits this into two layers, a separate layer for filtering and a separate layer for combining. This factorization has the effect of drastically reducing computation and model size. ”
 ![](https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Media%20Files/tf.png)
+
+ I have trained the model with MobileNetV2 and got the accuracy of 74% , which was better than previous model.
+ 
+ 
+ 
+ ## Model accuracy and loss plot
+  ![](https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Media%20Files/Loss%20and%20accuracy.jpeg)
+ 
+ ## Deployment of models
+ # 1.Deployment code for OpenCV using local machine.
+    using Jypyter Notebook with model saved by cnn with best weights.
+    https://github.com/Babu6030/Face-Emotion-Recognition/tree/main/Kaggle%20Notebooks/OpenCv%20Code
+    
+ # 2.Deployment in Heroku Platform
+ 
+ 
+ 
+ # 3.Deployment in Streamlit webapp
+    
