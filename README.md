@@ -1,6 +1,8 @@
 
 # Live Class Monitoring System using Face-Emotion-Recognition  
 Facial emotion recognition is the process of detecting human emotions from facial expressions.
+This project is in collabration with Shafil Ahamed @https://github.com/shafilahamed
+
 ![](Readmefiles/readme1st.jpg)
 
 # Introduction
@@ -32,6 +34,9 @@ Here is the dataset link:-  https://www.kaggle.com/jonathanoheix/face-expression
 3)	Streamlit
 4)	Streamlit-Webrtc
 5)	OpenCV
+
+## Model Creation
+1. Using CNN with the help of Keras
 
 
 
