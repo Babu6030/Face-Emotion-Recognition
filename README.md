@@ -86,5 +86,5 @@ Kaggle Notebook link: https://github.com/Babu6030/Face-Emotion-Recognition/blob/
  
  # 3.Deployment in Streamlit webapp
  
- https://share.streamlit.io/babu6030/streamlit-example
+ https://share.streamlit.io/babu6030/face-emotion-recognition/main
     
