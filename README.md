@@ -35,6 +35,15 @@ Here is the dataset link:-  https://www.kaggle.com/jonathanoheix/face-expression
 4)	Streamlit-Webrtc
 5)	OpenCV
 
+ ## Working Sample and Presentation Details
+ # Working Sample
+   @https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Media%20Files/WorkingSample.mp4
+ 
+ # Presentation view
+ @https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Media%20Files/Presentation.pdf
+ 
+
+
 ## Model Creation
 # 1. Using CNN with the help of Keras
    Deep learning is a very significant subset of machine learning because of its high performance across various domains. Convolutional Neural Network (CNN), is a powerful image processing deep learning type often using in computer vision that comprises an image and video recognition along with a recommender system and natural language processing ( NLP).
@@ -62,11 +71,12 @@ We shall be using Mobilenet as it is lightweight in its architecture. It uses de
  ## Deployment of models
  # 1.Deployment code for OpenCV using local machine.
     using Jypyter Notebook with model saved by cnn with best weights.
-    https://github.com/Babu6030/Face-Emotion-Recognition/tree/main/Kaggle%20Notebooks/OpenCv%20Code
+    @https://github.com/Babu6030/Face-Emotion-Recognition/tree/main/Kaggle%20Notebooks/OpenCv%20Code
     
  # 2.Deployment in Heroku Platform
- 
+  @https://emotion-detection-app-cnn.herokuapp.com/
  
  
  # 3.Deployment in Streamlit webapp
+ @https://share.streamlit.io/babu6030/streamlit-example
     
