@@ -36,11 +36,13 @@ Here is the dataset link:-  https://www.kaggle.com/jonathanoheix/face-expression
 5)	OpenCV
 
  ## Working Sample and Presentation Details
- # Working Sample
-   @https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Media%20Files/WorkingSample.mp4
+ # Working Sample Video
+   
+  https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Media%20Files/WorkingSample.mp4
  
- # Presentation view
- @https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Media%20Files/Presentation.pdf
+ # Presentation view in pdf
+ 
+ https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Media%20Files/Presentation.pdf
  
 
 
@@ -50,6 +52,8 @@ Here is the dataset link:-  https://www.kaggle.com/jonathanoheix/face-expression
 CNN uses a multilayer system consists of the input layer, output layer, and a hidden layer that comprises multiple convolutional layers, pooling layers, fully connected layers. We will discuss all layers in the next section of the article while explaining the building of CNN.
  
  ![Optional Text](https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Media%20Files/readmeSample.jpeg)
+ 
+ Kaggle Notebook link : https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Kaggle%20Notebooks/Face-Emotion-Recognition.ipynb
 
 • CNN model gave us training gave the accuracy of 80% and test accuracy of 68%. It seems excellent. So, we saved using callbacks and Tested on local machine it was worked fine.
 
@@ -61,6 +65,8 @@ CNN uses a multilayer system consists of the input layer, output layer, and a hi
 We shall be using Mobilenet as it is lightweight in its architecture. It uses depthwise separable convolutions which basically means it performs a single convolution on each colour channel rather than combining all three and flattening it. This has the effect of filtering the input channels. Or as the authors of the paper explain clearly: “ For MobileNets the depthwise convolution applies a single filter to each input channel. The pointwise convolution then applies a 1×1 convolution to combine the outputs the depthwise convolution. A standard convolution both filters and combines inputs into a new set of outputs in one step. The depthwise separable convolution splits this into two layers, a separate layer for filtering and a separate layer for combining. This factorization has the effect of drastically reducing computation and model size. ”
 ![](https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Media%20Files/tf.png)
 
+Kaggle Notebook link: https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Kaggle%20Notebooks/Team_Notebook.ipynb
+
  I have trained the model with MobileNetV2 and got the accuracy of 74% , which was better than previous model.
  
  
@@ -71,12 +77,14 @@ We shall be using Mobilenet as it is lightweight in its architecture. It uses de
  ## Deployment of models
  # 1.Deployment code for OpenCV using local machine.
     using Jypyter Notebook with model saved by cnn with best weights.
-    @https://github.com/Babu6030/Face-Emotion-Recognition/tree/main/Kaggle%20Notebooks/OpenCv%20Code
+ https://github.com/Babu6030/Face-Emotion-Recognition/tree/main/Kaggle%20Notebooks/OpenCv%20Code
     
  # 2.Deployment in Heroku Platform
-  @https://emotion-detection-app-cnn.herokuapp.com/
+ 
+ https://emotion-detection-app-cnn.herokuapp.com/
  
  
  # 3.Deployment in Streamlit webapp
- @https://share.streamlit.io/babu6030/streamlit-example
+ 
+ https://share.streamlit.io/babu6030/streamlit-example
     
