@@ -37,8 +37,8 @@ Here is the dataset link:-  https://www.kaggle.com/jonathanoheix/face-expression
 
  ## Working Sample and Presentation Details
  # Working Sample Video
-   
-  https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Media%20Files/WorkingSample.mp4
+   [![Watch the video](https://img.youtube.com/vi/T-D1KVIuvjA/maxresdefault.jpg)](https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Media%20Files/WorkingSample.mp4)
+  
  
  # Presentation view in pdf
  
