@@ -3,7 +3,7 @@ from PIL import Image, ImageOps
 import cv2
 import streamlit as st
 import tensorflow as tf
-from tensorflow.keras.models import model_from_json
+from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.preprocessing.image import img_to_array, array_to_img
 
