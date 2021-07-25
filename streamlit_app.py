@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon July  19 05:39:30 2021
+Created on Mon July  22 05:39:30 2021
 
-@author: Shafil
+@author: Babu Reddy
 """
 import streamlit as st
 st.title('Face emotion recognition')
