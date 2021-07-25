@@ -3,7 +3,6 @@
 @author: Babu Reddy
 """
 import streamlit as st
-st.title('Face emotion recognition')
 import av
 import cv2
 import numpy as np
@@ -34,7 +33,7 @@ class VideoTransformer(VideoTransformerBase):
         face_detect = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
     
         
-        class_labels = ['Angry','Fear','Happy','Neutral']
+        class_labels = ['Angry','Disgust','Fear','Happy','Neutral','Sad','Surprise']
 
 
         
@@ -59,7 +58,9 @@ class VideoTransformer(VideoTransformerBase):
             label=class_labels[prediction.argmax()]
             cv2.putText(img,label, (50,60), cv2.FONT_HERSHEY_SCRIPT_COMPLEX,2, (120,10,200),3)    
         return img
+    
 webrtc_streamer(key="example", video_transformer_factory=VideoTransformer)
+
 
 
 
