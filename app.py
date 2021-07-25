@@ -4,13 +4,14 @@ import cv2
 import streamlit as st
 import tensorflow as tf
 from tensorflow.keras.models import load_model
+from tensorflow.keras.models import model_from_json
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.preprocessing.image import img_to_array, array_to_img
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
-#model = model_from_json(open("vgg16_model.json", "r").read())
-model=load_model('https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/cnn_model.h5')
+model = model_from_json(open("https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Saved%20Model/model.json", "r").read())
+#model=load_model('https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/cnn_model.h5')
 model.load_weights('https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/cnn_model.h5')
 
 st.write("""# Face Expression Recognition""")
