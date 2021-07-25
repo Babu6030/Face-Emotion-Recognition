@@ -10,7 +10,7 @@ from tensorflow.keras.preprocessing.image import img_to_array, array_to_img
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
-model = model_from_json(open("https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Saved%20Model/model.json", "r").read())
+model = model_from_json(open("model.json", "r").read())
 #model=load_model('https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/cnn_model.h5')
 model.load_weights('https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/cnn_model.h5')
 
