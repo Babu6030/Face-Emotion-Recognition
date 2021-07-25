@@ -20,11 +20,12 @@ my_model=load_model('Kaggle Notebooks/OpenCv Code/modelbestweights.h5')
 
 
 st.title("Facial Emotion Recognizer")
-st.subheader("&#8592; Choose the image source on the sidebar:")
 st.markdown("Frontal face images without glasses work best. Image is not stored or saved in any form.")
 st.markdown("Dislaimer: Use this app at your own risk. Result might be mind-boggling.")
 st.subheader('''First, OpenCV will detect faces, (based on [this](https://realpython.com/face-recognition-with-python/)).''')
-st.subheader('''Then, Tensorflow will recognize their emotions using [my custom neural net](https://github.com/Babu6030/Face-Emotion-Recognition).''')
+st.subheader(" Choose the image source :")
+st.subheader('''Then, Keras model will recognize their emotions using [my custom neural net](https://github.com/Babu6030/Face-Emotion-Recognition).''')
+
 
 
 class VideoTransformer(VideoTransformerBase):
