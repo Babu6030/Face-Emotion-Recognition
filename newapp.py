@@ -51,7 +51,7 @@ class Camera:
 cam=Camera()
 
 while True:
-    _, image= camera.read()
+    _, image= cam.read()
     
    
     labels = []
