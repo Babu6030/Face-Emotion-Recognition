@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 from keras.models import load_model
-from time import sleep
 from keras.preprocessing.image import img_to_array
 from keras.preprocessing import image
 import cv2
@@ -49,4 +48,4 @@ while True:
         else:
             cv2.putText(frame,'No Faces',(30,80), cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
   
-    restore.image(frame)
+        restore.image(frame)
