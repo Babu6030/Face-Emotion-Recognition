@@ -30,6 +30,7 @@ restore=st.empty()
 
 class VideoTransformer(VideoTransformerBase):
     def transform(self, frame):
+        restore.image(frame)
         img = frame.to_ndarray(format="bgr24")
         face_detect = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
     
@@ -40,7 +41,7 @@ class VideoTransformer(VideoTransformerBase):
         
         img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         face_roi = face_detect.detectMultiScale(img_gray, 1.3,1)
-        restore.image(img_gray)
+        
         
         if face_roi is ():
             
