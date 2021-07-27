@@ -1,4 +1,5 @@
 import streamlit as st
+st.title('Face emotion recognition')
 import av
 import cv2
 import numpy as np
@@ -8,9 +9,8 @@ from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
 import matplotlib.pyplot as plt
 import tensorflow as tf
 from tensorflow import keras 
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 from tensorflow.keras import layers
-
 
 my_model=load_model('Kaggle Notebooks/OpenCv Code/modelbestweights.h5')
 
