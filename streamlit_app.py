@@ -61,7 +61,7 @@ class VideoTransformer(VideoTransformerBase):
             cv2.putText(img,label, (50,60), cv2.FONT_HERSHEY_SCRIPT_COMPLEX,2, (120,10,200),3)    
         return restore.image(img)
     
-    webrtc_streamer(key="example", video_transformer_factory=VideoTransformer)
+ webrtc_streamer(key="example", video_transformer_factory=VideoTransformer)
 
 
 
