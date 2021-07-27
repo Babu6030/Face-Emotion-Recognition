@@ -71,7 +71,7 @@ webrtc_streamer(
         key="media-constraints",
         desired_playing_state=playing,
         mode=WebRtcMode.SENDRECV,
-        client_settings=WEBRTC_CLIENT_SETTINGS, video_transformer_factory=VideoTransformer,
+        client_settings=WEBRTC_CLIENT_SETTINGS, video_transformer_factory=VideoTransformer)
 
 
 
