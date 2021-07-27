@@ -11,11 +11,11 @@ import streamlit as st
 
  
 
-face_classifier=cv2.CascadeClassifier(r'haarcascade_frontalface_default.xml')
+face_classifier=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
-classifier=load_model(r'cnn_model.h5')
+classifier=load_model('cnn_model.h5')
 
-emotion_labels=['Angry','Disgust','Fear','Happy','Neutral','Sad','Surprise']
+emotion_labels=['Fear','Happy','Neutral','Sad','Surprise']
 
 restore=st.empty()
 
@@ -56,7 +56,7 @@ while True:
    
 
  
-    #gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     
     faces=face_classifier.detectMultiScale(gray)
 
