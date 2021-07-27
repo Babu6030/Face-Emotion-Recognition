@@ -56,10 +56,11 @@ class VideoTransformer(VideoTransformerBase):
             final_image = cv2.resize(img_color_crop, (48,48))
             final_image = np.expand_dims(final_image, axis = 0)
             final_image = final_image/255.0
+            restore.image(final_image)
             prediction = my_model.predict(final_image)
             label=class_labels[prediction.argmax()]
             cv2.putText(img,label, (50,60), cv2.FONT_HERSHEY_SCRIPT_COMPLEX,2, (120,10,200),3)    
-        return restore.image(img)
+        return 
     
 webrtc_streamer(key="example", video_transformer_factory=VideoTransformer)
 
