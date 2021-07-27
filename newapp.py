@@ -56,13 +56,10 @@ while True:
    
 
     
-    #gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    if crop.size==0:
-     print("Ignored this - crop picture seems to be empty")
-    else:
-      gray=cv2.imwrite(frame, cv2.cvtColor(crop, cv2.COLOR_RGB2BGR)
+    gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
     
-   faces=face_classifier.detectMultiScale(gray)
+    faces=face_classifier.detectMultiScale(gray)
 
     for (x,y,w,h) in faces:
         cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,255),2)
