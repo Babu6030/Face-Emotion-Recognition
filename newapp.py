@@ -7,6 +7,8 @@ from keras.preprocessing import image
 import cv2
 import numpy as np
 import streamlit as st
+
+
  
 
 face_classifier=cv2.CascadeClassifier(r'haarcascade_frontalface_default.xml')
@@ -16,6 +18,15 @@ classifier=load_model(r'cnn_model.h5')
 emotion_labels=['Angry','Disgust','Fear','Happy','Neutral','Sad','Surprise']
 
 restore=st.empty()
+
+from streamlit_webrtc import ClientSettings, WebRtcMode, webrtc_streamer
+
+# setting for webcamera
+WEBRTC_CLIENT_SETTINGS = ClientSettings(
+    rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]},
+    media_stream_constraints={"video": True, "audio": False},
+)
+
 
 class Camera:
     '''
