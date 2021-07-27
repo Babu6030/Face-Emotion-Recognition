@@ -40,9 +40,10 @@ class VideoTransformer(VideoTransformerBase):
         
         img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         face_roi = face_detect.detectMultiScale(img_gray, 1.3,1)
+        restore.image(img_gray)
         
         if face_roi is ():
-            restore.image(img)
+            
             return img
 
         for(x,y,w,h) in face_roi:
