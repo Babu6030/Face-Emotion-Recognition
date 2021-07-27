@@ -77,4 +77,4 @@ while True:
         else:
             cv2.putText(frame,'No Faces',(30,80), cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
   
-     restore.image(frame)
+    restore.image(frame)
