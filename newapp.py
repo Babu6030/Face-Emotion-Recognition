@@ -53,6 +53,10 @@ cam=Camera()
 while True:
     frame= cam.read()
     labels = []
+   
+
+     frame = cv2.imread(frame)
+   
     gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
     faces=face_classifier.detectMultiScale(gray)
 
