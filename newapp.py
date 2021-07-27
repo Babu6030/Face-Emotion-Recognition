@@ -60,7 +60,7 @@ while True:
     if crop.size==0:
      print("Ignored this - crop picture seems to be empty")
         else:
-    gray=cv2.imwrite(frame, cv2.cvtColor(crop, cv2.COLOR_RGB2BGR)
+           gray=cv2.imwrite(frame, cv2.cvtColor(crop, cv2.COLOR_RGB2BGR)
     
     faces=face_classifier.detectMultiScale(gray)
 
