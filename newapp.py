@@ -13,7 +13,7 @@ import streamlit as st
 
 face_classifier=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
-classifier=load_model('https://drive.google.com/file/d/1f5lXkIxAzI2MAc1OWivn96SvLAy7TUxo/view?usp=sharing')
+classifier=load_model('cnn_model')
 
 emotion_labels=['Fear','Happy','Neutral','Sad','Surprise']
 
