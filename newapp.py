@@ -55,9 +55,10 @@ while True:
     labels = []
    
 
-    frame = cv2.imread(frame)
+    frame = cv2.imread(frame,0)
    
-    gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+    #gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+    gray=frame
     faces=face_classifier.detectMultiScale(gray)
 
     for (x,y,w,h) in faces:
