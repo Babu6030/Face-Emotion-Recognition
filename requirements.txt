@@ -7,4 +7,4 @@ opencv-contrib-python-headless>=4.5.1.48
 streamlit-webrtc>=0.11.0
 matplotlib>=3.4.2
 gunicorn==19.0.0
-opencv-python -U
+opencv-python==4.4.0.44
