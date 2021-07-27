@@ -11,7 +11,7 @@ import cv2
 st.title("Facial Emotion Recognizer")
 
 face_classifier=cv2.CascadeClassifier(r'https://github.com/Babu6030/Face-Emotion-Recognition/tree/main/Kaggle%20Notebooks/OpenCv%20Code')
-classifier=load_model(r'https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/cnn_model.h5')
+classifier=load_model(r'https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Kaggle%20Notebooks/OpenCv%20Code/modelbestweights.h5')
 
 emotion_labels=['Angry','Disgust','Fear','Happy','Neutral','Sad','Surprise']
 
