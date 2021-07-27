@@ -23,14 +23,14 @@ st.subheader(" Choose the image source :")
 st.subheader('''Then, Keras model will recognize their emotions using [my custom neural net](https://github.com/Babu6030/Face-Emotion-Recognition).''')
 
 
-restore=st.empty() 
+
 class VideoTransformer(VideoTransformerBase):
     def transform(self, frame):
         img = frame.to_ndarray(format="bgr24")
         face_detect = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
     
         
-        class_labels = ['Fear','Happy','Neutral','Sad','Surprise']
+        class_labels = ['Angry','Happy','Neutral','Sad','Surprise']
 
 
         
@@ -54,8 +54,6 @@ class VideoTransformer(VideoTransformerBase):
             prediction = my_model.predict(final_image)
             label=class_labels[prediction.argmax()]
             cv2.putText(img,label, (50,60), cv2.FONT_HERSHEY_SCRIPT_COMPLEX,2, (120,10,200),3)    
-            retore.image(img)
         return img
-         
     
 webrtc_streamer(key="example", video_transformer_factory=VideoTransformer)
