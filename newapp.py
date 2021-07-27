@@ -56,7 +56,7 @@ while True:
    
 
     
-    gray=cv2.cvtColor(frame, cv2.COLOR_BGR2LAB)
+    gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     
     faces=face_classifier.detectMultiScale(gray)
 
@@ -77,4 +77,4 @@ while True:
         else:
             cv2.putText(frame,'No Faces',(30,80), cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
   
-    restore.image(frame)
+     restore.image(frame)
