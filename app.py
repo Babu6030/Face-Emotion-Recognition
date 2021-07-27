@@ -9,10 +9,44 @@ import cv2
 
 
 st.title("Facial Emotion Recognizer")
+st.markdown("Frontal face images without glasses work best. Image is not stored or saved in any form.")
+st.markdown("Dislaimer: Use this app at your own risk. Result might be mind-boggling.")
+st.subheader('''First, OpenCV will detect faces, (based on [this](https://realpython.com/face-recognition-with-python/)).''')
+st.subheader(" Choose the image source :")
+st.subheader('''Then, Keras model will recognize their emotions using [my custom neural net](https://github.com/Babu6030/Face-Emotion-Recognition).''')
 
-face_classifier=cv2.CascadeClassifier('/Babu6030/Face-Emotion-Recognition/tree/main/Kaggle%20Notebooks/OpenCv%20Code')
-classifier=load_model('/Babu6030/Face-Emotion-Recognition/blob/main/Kaggle%20Notebooks/OpenCv%20Code/modelbestweights.h5')
+
+
+face_classifier=cv2.CascadeClassifier(r'haarcascade_frontalface_default.xml')
+
+classifier=load_model(r'modelbestweights.h5')
 
 emotion_labels=['Angry','Disgust','Fear','Happy','Neutral','Sad','Surprise']
 
 cap=cv2.VideoCapture(0)
+restore=st.empty()
+
+while True:
+    _, frame= cap.read()
+    labels = []
+    gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+    faces=face_classifier.detectMultiScale(gray)
+
+    for (x,y,w,h) in faces:
+        cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,255),2)
+        roi_gray=gray[y:y+h,x:x+w]
+        roi_gray=cv2.resize(roi_gray,(48,48), interpolation=cv2.INTER_AREA)
+
+        if np.sum([roi_gray]) !=  0:
+            roi=roi_gray.astype('float')/255.0
+            roi=img_to_array(roi)
+            roi=np.expand_dims(roi,axis=0)
+
+            prediction = classifier.predict(roi)[0]
+            label=emotion_labels[prediction.argmax()]
+            label_position=(x,y-10)
+            cv2.putText(frame,label,label_position,cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
+        else:
+            cv2.putText(frame,'No Faces',(30,80), cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
+  
+    restore.image(frame)
