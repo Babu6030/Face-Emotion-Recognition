@@ -26,7 +26,7 @@ st.subheader('''First, OpenCV will detect faces, (based on [this](https://realpy
 st.subheader(" Choose the image source :")
 st.subheader('''Then, Keras model will recognize their emotions using [my custom neural net](https://github.com/Babu6030/Face-Emotion-Recognition).''')
 
-
+restore=st.empty()
 
 class VideoTransformer(VideoTransformerBase):
     def transform(self, frame):
@@ -40,6 +40,7 @@ class VideoTransformer(VideoTransformerBase):
         
         img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         face_roi = face_detect.detectMultiScale(img_gray, 1.3,1)
+        
         if face_roi is ():
             return img
 
@@ -58,7 +59,7 @@ class VideoTransformer(VideoTransformerBase):
             prediction = my_model.predict(final_image)
             label=class_labels[prediction.argmax()]
             cv2.putText(img,label, (50,60), cv2.FONT_HERSHEY_SCRIPT_COMPLEX,2, (120,10,200),3)    
-        return img
+        return restore.image(img)
     
 webrtc_streamer(key="example", video_transformer_factory=VideoTransformer)
 
