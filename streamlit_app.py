@@ -2,75 +2,85 @@
 """
 @author: Babu Reddy
 """
-import streamlit as st
-import av
+#Import Libraries
+
+from keras.models import load_model
+from time import sleep
+from keras.preprocessing.image import img_to_array
+from keras.preprocessing import image
 import cv2
 import numpy as np
 import streamlit as st
-#from aiortc.contrib.media import MediaPlayer
-from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
-import matplotlib.pyplot as plt
-import tensorflow as tf
-from tensorflow import keras 
-from tensorflow.keras.models import load_model
-from tensorflow.keras import layers
 
 
-my_model=load_model('Kaggle Notebooks/OpenCv Code/modelbestweights.h5')
+ 
 
+face_classifier=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
-st.title("Facial Emotion Recognizer")
-st.markdown("Frontal face images without glasses work best. Image is not stored or saved in any form.")
-st.markdown("Dislaimer: Use this app at your own risk. Result might be mind-boggling.")
-st.subheader('''First, OpenCV will detect faces, (based on [this](https://realpython.com/face-recognition-with-python/)).''')
-st.subheader(" Choose the image source :")
-st.subheader('''Then, Keras model will recognize their emotions using [my custom neural net](https://github.com/Babu6030/Face-Emotion-Recognition).''')
+classifier=load_model('cnn_model.h5')
+
+emotion_labels=['Angry','Disgust','Fear','Happy','Neutral','Sad','Surprise']
 
 restore=st.empty()
 
-class VideoTransformer(VideoTransformerBase):
-    def transform(self, frame):
-        restore.image(frame)
-        img = frame.to_ndarray(format="bgr24")
-        face_detect = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+from streamlit_webrtc import ClientSettings, WebRtcMode, webrtc_streamer
+
+# setting for webcamera
+WEBRTC_CLIENT_SETTINGS = ClientSettings(
+    rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]},
+    media_stream_constraints={"video": True, "audio": False},
+)
+
+
+class Camera:
+    '''
+    Camera object to get video from remote source
+    use read() method to read frames from video
+    '''
+    def __init__(self) -> None:
+        self.webrtc_ctx = webrtc_streamer(key="loopback", mode=WebRtcMode.SENDONLY, client_settings=WEBRTC_CLIENT_SETTINGS)
     
-        
-        class_labels = ['Angry','Disgust','Fear','Happy','Neutral','Sad','Surprise']
+    def read(self):
+        if self.webrtc_ctx.video_receiver:
+            try:
+                frame = self.webrtc_ctx.video_receiver.get_frame()
+            except queue.Empty:
+                print("Queue is empty. Stop the loop.")
+                self.webrtc_ctx.video_receiver.stop()
+            img_rgb = frame.to_ndarray(format="rgb24")
+            return img_rgb
+        return None
 
+cam=Camera()
 
-        
-        img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        face_roi = face_detect.detectMultiScale(img_gray, 1.3,1)
-        
-        
-        if face_roi is ():
-            
-            return img
-
-        for(x,y,w,h) in face_roi:
-            x = x - 5
-            w = w + 10
-            y = y + 7
-            h = h + 2
-            
-            cv2.rectangle(img, (x,y),(x+w,y+h),(125,125,10), 2)
-            img_color_crop = img[y:y+h,x:x+w]
-            img_color_crop = img[y:y+h,x:x+w]                        
-            final_image = cv2.resize(img_color_crop, (48,48))
-            final_image = np.expand_dims(final_image, axis = 0)
-            final_image = final_image/255.0
-            
-            prediction = my_model.predict(final_image)
-            label=class_labels[prediction.argmax()]
-            img=cv2.putText(img,label, (50,60), cv2.FONT_HERSHEY_SCRIPT_COMPLEX,2, (120,10,200),3)    
-            return img
+while True:
+    frame= cam.read()
     
-#webrtc_streamer(key="example", video_transformer_factory=VideoTransformer)
+   
+    labels = []
+   
 
-webrtc_streamer(
-        key="media-constraints",
- video_transformer_factory=VideoTransformer)
+    
+    gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
+    
+    faces=face_classifier.detectMultiScale(gray)
 
+    for (x,y,w,h) in faces:
+        cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,255),2)
+        roi_gray=gray[y:y+h,x:x+w]
+        roi_gray=cv2.resize(roi_gray,(48,48), interpolation=cv2.INTER_AREA)
 
+        if np.sum([roi_gray]) !=  0:
+            roi=roi_gray.astype('float')/255.0
+            roi=img_to_array(roi)
+            roi=np.expand_dims(roi,axis=0)
 
+            prediction = classifier.predict(roi)[0]
+            label=emotion_labels[prediction.argmax()]
+            label_position=(x,y-10)
+            cv2.putText(frame,label,label_position,cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
+        else:
+            cv2.putText(frame,'No Faces',(30,80), cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
+  
+    restore.image(frame)
