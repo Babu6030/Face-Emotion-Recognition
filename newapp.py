@@ -11,7 +11,7 @@ import streamlit as st
 
 face_classifier=cv2.CascadeClassifier(r'haarcascade_frontalface_default.xml')
 
-classifier=load_model(r'modelbestweights.h5')
+classifier=load_model(r'cnn_model.h5')
 
 emotion_labels=['Angry','Disgust','Fear','Happy','Neutral','Sad','Surprise']
 
