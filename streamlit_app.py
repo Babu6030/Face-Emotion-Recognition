@@ -14,9 +14,7 @@ import streamlit as st
 
 
 
-
-try:
- face_classifier=cv2.CascadeClassifier(r'haarcascade_frontalface_default.xml')
+face_classifier=cv2.CascadeClassifier(r'haarcascade_frontalface_default.xml')
 
 classifier=load_model(r'cnn_model.h5')
 
@@ -89,10 +87,7 @@ while True:
   
   
   
-  
-except:
-  # Prevent the error from propagating into your Streamlit app.
-  pass
+
 
 
  
