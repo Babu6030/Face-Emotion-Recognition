@@ -85,7 +85,7 @@ Kaggle Notebook link: https://github.com/Babu6030/Face-Emotion-Recognition/blob/
  
  
  # 3.Deployment in Streamlit webapp
- 
+  Note : please try to start by selecting device, ignore the error code shown press start()
  https://share.streamlit.io/babu6030/face-emotion-recognition/main
     
 ## Concluding Summary
