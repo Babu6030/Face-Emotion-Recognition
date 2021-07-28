@@ -11,6 +11,8 @@ from tensorflow.keras.models import load_model
 import cv2
 import numpy as np
 import streamlit as st
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
 
