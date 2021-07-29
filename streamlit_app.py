@@ -66,7 +66,7 @@ while True:
     
    
     labels = []
-    img = frame.to_ndarray(format="bgr24")
+    img = frame.__array_interface__
 
     
     gray=cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
