@@ -1,5 +1,7 @@
 # Heres a comment
-*.psd
+*.jpge
+*.png
 *.pdf
-/test
-/spec
+/READme.md
+/Media Files
+/Kaggle Notebooks
