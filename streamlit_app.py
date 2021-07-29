@@ -12,6 +12,7 @@ import cv2
 import numpy as np
 import streamlit as st
 import warnings
+from typing import Union
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
@@ -66,10 +67,10 @@ while True:
     
    
     labels = []
-    img = cv2.imread(frame)
+   
 
     
-    gray=cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     
     faces=face_classifier.detectMultiScale(gray)
