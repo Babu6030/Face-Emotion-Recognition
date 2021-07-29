@@ -66,10 +66,10 @@ while True:
     
    
     labels = []
-   
+    img = frame.to_ndarray(format="bgr24")
 
     
-    gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    gray=cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     
     faces=face_classifier.detectMultiScale(gray)
