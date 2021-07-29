@@ -15,6 +15,13 @@ import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
+ #ignore
+try:
+    from typing import Literal
+except ImportError:
+    from typing_extensions import Literal 
+
+
 
 face_classifier=cv2.CascadeClassifier(r'haarcascade_frontalface_default.xml')
 
