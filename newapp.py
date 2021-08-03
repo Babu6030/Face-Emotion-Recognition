@@ -54,6 +54,8 @@ class Camera:
                 print("Queue is empty. Stop the loop.")
                 self.webrtc_ctx.video_receiver.stop()
             img_rgb = frame.to_ndarray(format="rgb24")
+            img_rgb= PIL.Image.fromarray(cv2.cvtColor(img_rgb, cv2.COLOR_BGR2RGB))
+
             return img_rgb
         return None
 
@@ -68,7 +70,8 @@ while True:
 
 
     #gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    gray = PIL.Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+    #gray = PIL.Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+    gray=frame
 
     
     faces=face_classifier.detectMultiScale(gray)
