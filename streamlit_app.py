@@ -64,7 +64,7 @@ cam = Camera()
 
 while True:
    
-    frame= cam.read()
+    ret, frame= cam.read()
     
     #frame = cv2.imread("frame.rgb24", 1)
     
@@ -72,9 +72,14 @@ while True:
     
    
 
-    cv2.imshow('frame1',frame)
+
+    if not ret:
+        print("Can't receive frame (stream end?). Exiting ...")
+        break
+    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+
     #gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    gray=frame
+    # gray=frame
 
     
     faces=face_classifier.detectMultiScale(gray)
