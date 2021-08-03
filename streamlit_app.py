@@ -60,13 +60,15 @@ class Camera:
             return img_rgb
         return None
 
-cam=Camera()
+cam = cv2.VideoCapture(0)
 
 while True:
+   
     frame= cam.read()
     
    
     labels = []
+    
    
 
     
