@@ -1,11 +1,8 @@
-#Import Libraries
-
 from keras.models import load_model
 from time import sleep
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
 import cv2
-import PIL
 import numpy as np
 import streamlit as st
 import warnings
@@ -54,8 +51,6 @@ class Camera:
                 print("Queue is empty. Stop the loop.")
                 self.webrtc_ctx.video_receiver.stop()
             img_rgb = frame.to_ndarray(format="rgb24")
-            img_rgb= PIL.Image.fromarray(cv2.cvtColor(img_rgb, cv2.COLOR_BGR2RGB))
-
             return img_rgb
         return None
 
@@ -66,12 +61,10 @@ while True:
     frame= cam.read()
     
     labels = []
- 
 
 
-    #gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    #gray = PIL.Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
-    gray=frame
+    gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    
 
     
     faces=face_classifier.detectMultiScale(gray)
@@ -92,11 +85,10 @@ while True:
             cv2.putText(frame,label,label_position,cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
         else:
             cv2.putText(frame,'No Faces',(30,80), cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
-       
-       
-
-
   
     restore.image(frame)
-
   
+  
+  
+  
+
