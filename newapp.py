@@ -2,18 +2,27 @@
 
 from keras.models import load_model
 from time import sleep
-from keras.preprocessing.image import img_to_array
-from keras.preprocessing import image
+from tensorflow.keras.preprocessing.image import img_to_array
+from tensorflow.keras.models import load_model
 import cv2
 import numpy as np
 import streamlit as st
+import warnings
+from typing import Union
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
- 
+ #ignore
+try:
+    from typing import Literal
+except ImportError:
+    from typing_extensions import Literal 
 
-face_classifier=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
-classifier=load_model('cnn_model.h5')
+
+face_classifier=cv2.CascadeClassifier(r'haarcascade_frontalface_default.xml')
+
+classifier=load_model(r'cnn_model.h5')
 
 emotion_labels=['Angry','Disgust','Fear','Happy','Neutral','Sad','Surprise']
 
@@ -31,7 +40,6 @@ WEBRTC_CLIENT_SETTINGS = ClientSettings(
 class Camera:
     '''
     Camera object to get video from remote source
-
     use read() method to read frames from video
     '''
     def __init__(self) -> None:
@@ -48,17 +56,17 @@ class Camera:
             return img_rgb
         return None
 
-cam=Camera()
+cam = Camera()
 
 while True:
+   
     frame= cam.read()
     
-   
     labels = []
-   
 
-    
+
     gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    
 
     
     faces=face_classifier.detectMultiScale(gray)
@@ -81,3 +89,6 @@ while True:
             cv2.putText(frame,'No Faces',(30,80), cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
   
     restore.image(frame)
+  
+  
+  
