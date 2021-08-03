@@ -66,7 +66,8 @@ while True:
    
     frame= cam.read()
     
-   
+    frame = cv2.imread("frame.rgb24", 1)
+    
     labels = []
     
    
