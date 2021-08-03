@@ -60,7 +60,7 @@ class Camera:
             return img_rgb
         return None
 
-cam = cv2.VideoCapture(0)
+cam = Camera()
 
 while True:
    
