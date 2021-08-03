@@ -56,7 +56,7 @@ class Camera:
             except queue.Empty:
                 print("Queue is empty. Stop the loop.")
                 self.webrtc_ctx.video_receiver.stop()
-            img_rgb = frame.to_ndarray(format="gray")
+            img_rgb = frame.to_ndarray(format="rgb24")
             return img_rgb
         return None
 
@@ -72,7 +72,7 @@ while True:
     
    
 
-    
+    cv2.imshow('frame1',frame)
     #gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     gray=frame
 
