@@ -96,9 +96,6 @@ while True:
        
 
 
-    st_webrtc_logger = logging.getLogger("streamlit_webrtc")
-    st_webrtc_logger.setLevel(logging.DEBUG)
-
   
     restore.image(frame)
 
