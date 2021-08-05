@@ -25,7 +25,7 @@ except ImportError:
 
   ### Streamlit app
 st.title("Facial Emotion Recognizer")
-st.subheader("Choose the image source on the sidebar:")
+st.subheader("Choose the image source on the Select Device:")
 st.markdown("Note: Image is not stored or saved in any form and for better results try without Glasees")
 st.markdown("Dislaimer: Use this app at your own risk.")
 st.subheader('''First, OpenCV will detect faces, (based on [this](https://realpython.com/face-recognition-with-python/)).''')
