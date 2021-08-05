@@ -64,16 +64,6 @@ class Camera:
 cam = Camera()
 
 
-def read_img(path):
-    """Given a path to an image file, returns a cv2 array
-
-    str -> np.ndarray"""
-    if os.path.isfile(path):
-        return cv2.imread(path)
-    else:
-        raise ValueError('Path provided is not a valid file: {}'.format(path))
-
-
 
 
 while True:
@@ -82,12 +72,9 @@ while True:
     
     labels = []
     
-    path = 'frame'
-    img = read_img(path)
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 
-    #gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     
 
     
