@@ -26,7 +26,7 @@ except ImportError:
   ### Streamlit app
 st.title("Face Emotion Recognition application")
 st.subheader("Choose the image source on the Select Device:")
-st.markdown("Note: Image is not stored or saved in any form and for better results try without Glasees")
+st.markdown("Note: Image is not stored or saved in any form and for better results try without eye Glasses")
 st.markdown("Dislaimer: Use this app at your own risk.")
 st.subheader('''First, OpenCV will detect faces, (based on [this](https://realpython.com/face-recognition-with-python/)).''')
 st.subheader('''Then, CNN model will recognize their emotions using [my custom neural net](https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Kaggle%20Notebooks/Face-Emotion-Recognition.ipynb).''')
