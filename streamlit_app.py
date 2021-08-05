@@ -30,6 +30,7 @@ st.markdown("Note: Image is not stored or saved in any form and for better resul
 st.markdown("Dislaimer: Use this app at your own risk.")
 st.subheader('''First, OpenCV will detect faces, (based on [this](https://realpython.com/face-recognition-with-python/)).''')
 st.subheader('''Then, CNN model will recognize their emotions using [my custom neural net](https://github.com/Babu6030/Face-Emotion-Recognition/blob/main/Kaggle%20Notebooks/Face-Emotion-Recognition.ipynb).''')
+st.subheader("ignore the opencv error, press start and allow the webcam premission")
 
 
 face_classifier=cv2.CascadeClassifier(r'haarcascade_frontalface_default.xml')
