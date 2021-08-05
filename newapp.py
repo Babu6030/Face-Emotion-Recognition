@@ -50,7 +50,9 @@ class Camera:
             except queue.Empty:
                 print("Queue is empty. Stop the loop.")
                 self.webrtc_ctx.video_receiver.stop()
-            img_rgb = frame.to_ndarray(format="rgb24")
+            img_rgb = frame.to_ndarray(format="bgr24")
+                    #def recv(self, frame: av.VideoFrame) -> av.VideoFrame:
+            #img = frame.to_ndarray(format="bgr24")
             return img_rgb
         return None
 
