@@ -24,7 +24,7 @@ except ImportError:
     from typing_extensions import Literal 
 
   ### Streamlit app
-st.title("Facial Emotion Recognizer")
+st.title("Face Emotion Recognition application")
 st.subheader("Choose the image source on the Select Device:")
 st.markdown("Note: Image is not stored or saved in any form and for better results try without Glasees")
 st.markdown("Dislaimer: Use this app at your own risk.")
