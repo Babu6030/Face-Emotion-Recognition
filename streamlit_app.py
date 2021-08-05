@@ -82,8 +82,8 @@ while True:
     
 
 
-    gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    
+    #gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    gray=frame
 
     
     faces=face_classifier.detectMultiScale(gray)
