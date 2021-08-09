@@ -89,6 +89,6 @@ Kaggle Notebook link: https://github.com/Babu6030/Face-Emotion-Recognition/blob/
  https://share.streamlit.io/babu6030/face-emotion-recognition/main
     
 ## Concluding Summary
-   So Here, Finally We build a Web App by Using CNN model, which as training accuracy of 78% and validation accuracy of 68%
+   So Here, Finally We build a Web App by Using CNN model, which as training accuracy of 74% and validation accuracy of 68%
    
    
