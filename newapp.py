@@ -64,6 +64,7 @@ class Camera:
 cam = Camera()
 
 while True:
+    restore=st.empty()
    
     frame= cam.read()
     
