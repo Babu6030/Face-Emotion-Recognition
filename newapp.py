@@ -16,7 +16,12 @@ try:
 except ImportError:
     from typing_extensions import Literal 
 
-
+st.write("manoj please do like this")
+  
+  
+  
+  
+  
 
 face_classifier=cv2.CascadeClassifier(r'haarcascade_frontalface_default.xml')
 
